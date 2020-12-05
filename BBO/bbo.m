@@ -27,7 +27,7 @@ nVar = 5;             % Number of Decision Variables
 VarSize = [1 nVar];   % Decision Variables Matrix Size
 
 VarMin = -10;         % Decision Variables Lower Bound
-VarMax =  10;         % Decision Variables Upper Bound
+VarMax = 10;         % Decision Variables Upper Bound
 
 %% BBO Parameters
 
@@ -83,7 +83,7 @@ for it = 1:MaxIt
     for i = 1:nPop
         for k = 1:nVar
             % Migration
-            if rand< = lambda(i)
+            if rand <= lambda(i)
                 % Emmigration Probabilities
                 EP = mu;
                 EP(i) = 0;
@@ -99,7 +99,7 @@ for it = 1:MaxIt
             end
             
             % Mutation
-            if rand< = pMutation
+            if rand <= pMutation
                 newpop(i).Position(k) = newpop(i).Position(k)+sigma*randn;
             end
         end
